@@ -1,0 +1,92 @@
+﻿<table style="width:80%;margin-left: 100px">
+    <tr>
+        <td>
+           <h2>Customers</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br />
+            <div class="ContentSideSections Implementation">
+                <p-dataTable [value]="rowData" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+                    <header>Customers Details</header>
+                    <p-column field="customerId" [style]="{'width':'50px'}" header="ID" [sortable]="true"></p-column>
+                    <p-column field="firstName" header="First Name" [sortable]="true"></p-column>
+                    <p-column field="lastName" header="Last Name" [sortable]="true"></p-column>
+
+                    <!--<label class="control-label col-md-12" for="Gender">Gender</label>
+    <div class="col-md-4">
+        <select class="form-control" data-val="true" formControlName="gender">
+            <option value="">-- Select Gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>-->
+                    <p-column field="phone" [style]="{'width':'120px'}" header="Phone No" [sortable]="true"></p-column>
+                    <p-column field="email" [style]="{'width':'150px'}" header="Email" [sortable]="true"></p-column>
+                    <p-column field="birthday" header="Birthday" [sortable]="true"></p-column>
+
+                    <p-column>
+                        <ng-template let-col let-customer="rowData" pTemplate type="body">
+                            <button type="button" pButton icon="fa-check" (click)="showDialogToEdit(customer)" label="Edit"></button>
+                        </ng-template>
+                    </p-column>
+                    <p-column>
+                        <ng-template let-col let-customer="rowData" pTemplate type="body">
+                            <button type="button" pButton icon="fa-close" (click)="showDialogToDelete(customer)" label="Delete"></button>
+                        </ng-template>
+                    </p-column>
+                    <footer><div class="ui-helper-clearfix" style="width:100%"></div></footer>
+                </p-dataTable>
+
+                <p-dialog header="Customer Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+                    <div class="ui-grid ui-grid-responsive ui-fluid ui-grid-pad">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-4"><label for="firstname">FirstName</label></div>
+                            <div class="ui-grid-col-8"><input pInputText id="vin" [(ngModel)]="customer.firstName" /></div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-4"><label for="lastname">LastName</label></div>
+                            <div class="ui-grid-col-8"><input pInputText id="lastname" [(ngModel)]="customer.lastName" /></div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-4"><label for="mobile">Phone</label></div>
+                            <div class="ui-grid-col-8"><input pInputText id="mobile" [(ngModel)]="customer.phone" /></div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-4"><label for="email">Email</label></div>
+                            <div class="ui-grid-col-8"><input type="email" pInputText id="email" [(ngModel)]="customer.email" /></div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-4"><label for="birthday">Birthday</label></div>
+                            <div class="ui-grid-col-8"><input pInputText id="birthday" type="date" [ngModel]="customer.birthday | date:'MM/dd/yyyy'" /></div>
+                        </div>
+                    </div>
+                    <footer>
+                        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                            <button type="button" pButton icon="fa-close" (click)="cancel()" label="Cancel"></button>
+                            <button type="button" pButton icon="fa-check" (click)="save()" *ngIf="newCustomer" label="Save"></button>
+                            <button type="button" pButton icon="fa-check" (click)="save()" *ngIf="!newCustomer" label="Update"></button>
+                        </div>
+                    </footer>
+                </p-dialog>
+                <p-dialog header="Confirm Deletion" [(visible)]="displayDeleteDialog" modal="modal" showEffect="fade">
+                    <p>
+                        Are you sure to delete the following customer?
+                    </p>
+                    <footer>
+                        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                            <button type="button" pButton icon="fa-close" (click)="okDelete(false)" label="No"></button>
+                            <button type="button" pButton icon="fa-check" (click)="okDelete(true)" label="Yes"></button>
+                        </div>
+                    </footer>
+                </p-dialog>
+            </div>
+        </td>
+    </tr>
+</table>
