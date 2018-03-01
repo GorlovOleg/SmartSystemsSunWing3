@@ -14,7 +14,7 @@ namespace DataAccessLibrary.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=tcp:ax0phpxcas.database.windows.net,1433;Database=GorlovMedia_db;User Id=SQL2014;Password=Fling1959;ApplicationIntent=ReadWrite;");
+                optionsBuilder.UseSqlServer(@"Server=XXX;");
             }
         }
 
