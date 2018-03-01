@@ -1,8 +1,6 @@
-# SmartSystemsSunWing3
+# SmartSystemsSunWing3 - Angular 4, ASP.Net Core 2 SPA
 
-# Angular 4, Bootstrap 4, ASP.Net Core 2 SPA
-
-## Project prototipe to demonstrate using .NET Core 2, Web API2, Angular 4, PrimeNG 4.0, TypeScript, ECMAScript6, SCSS.[![Build status](https://ci.appveyor.com/api/projects/status/33srpo7owl1h3y4e?svg=true)]
+## Project prototipe to demonstrate using .NET Core 2, Bootstrap 4, Web API2, Angular 4, PrimeNG 4.0, TypeScript, ECMAScript6, SCSS.[![Build status](https://ci.appveyor.com/api/projects/status/33srpo7owl1h3y4e?svg=true)]
 
 Requirement and Enviroment for project : 
 Windows 10 Home and above version.
