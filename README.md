@@ -16,9 +16,9 @@ Dependency injection  and services in class startup.cs and inside the method “
 4. Repository Layer project for interfaces to data context folder - DAL (Data Access Layer)
 5. Presintation Layer Angular2  folder - ClientApp
 6. Validations using  in this project:
-6.1 View Layer:  validations   in presenation data view   added the Interfeces for  components of Angular 2 in TypeScript  files - company.component.ts , address.component.ts etc.  
-6.2 Controller Business Layer: In implementing  of classes of controllers added functions  validations
-6.3 In the data model added Class Attributes DataAnnotations the specify for individual fields . These attributes define common validation patterns, such as range checking and required fields - Required is ensures that the value must be provided to the model property, StringLength, Data Type ,  etc.
+* [6.1] View Layer:  validations   in presenation data view   added the Interfeces for  components of Angular 2 in TypeScript  files - company.component.ts , address.component.ts etc.  
+* [6.2] Controller Business Layer: In implementing  of classes of controllers added functions  validations
+* [6.3] In the data model added Class Attributes DataAnnotations the specify for individual fields . These attributes define common validation patterns, such as range checking and required fields - Required is ensures that the value must be provided to the model property, StringLength, Data Type ,  etc.
 Added Custom validation class, for class Model sType,  with implementation. It used ValidationAttribute, and accept type information for addresses only  'L', 'M' or 'W'
-6.4 Data Access Layer: Mapping Class EntityFrameworkCore.Metadata for properties.
-6.5 Back End SQL using CONSTRAINT expression, Data Type, fields lengths etc.  
+* [6.4] Data Access Layer: Mapping Class EntityFrameworkCore.Metadata for properties.
+* [6.5] Back End SQL using CONSTRAINT expression, Data Type, fields lengths etc.  
